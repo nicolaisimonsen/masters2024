@@ -2,6 +2,92 @@
 @tailwind components;
 @tailwind utilities;
 
+html.lenis {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-scrolling iframe {
+  pointer-events: none;
+}
+
 .card {
-  @apply h-80 shadow-lg;
+  @apply h-80 shadow-xl overflow-hidden;
+}
+
+main {
+  position: relative;
+  background: url("./assets/images/agusta3.webp") no-repeat center center fixed;
+  background-size: cover;
+  z-index: -2;
+}
+
+main::before {
+  content: "";
+  height: 100vh;
+  width: 100vw;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  background: linear-gradient(
+    346deg,
+    rgba(2, 0, 36, 1) 0%,
+    rgba(53, 121, 9, 1) 35%,
+    rgba(41, 142, 66, 1) 50%
+  );
+  opacity: 0.4;
+}
+main::after {
+  background: radial-gradient(circle at 50% 50%, rgba(0, 0, 0, 0), mediumblue),
+    url(https://grainy-gradients.vercel.app/noise.svg);
+  filter: contrast(50%) brightness(10%);
+  content: "";
+  height: 100vh;
+  width: 100vw;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+section {
+  z-index: 2;
+}
+
+.section-one__bg {
+}
+
+.players__player {
+  animation: goUp 1s ease-out infinite;
+  animation-play-state: paused;
+  animation-delay: calc((var(--scroll) * var(--index)) * -0.25s);
+
+  animation-iteration-count: 1;
+  animation-fill-mode: both;
+}
+
+.player__image {
+  animation: goUp 1s linear infinite;
+  animation-play-state: paused;
+  animation-delay: calc((var(--scroll) - 0.1) * -0.09s);
+  animation-iteration-count: 1;
+  animation-fill-mode: both;
+}
+
+@keyframes goUp {
+  to {
+    transform: translateY(-100vh);
+  }
 }
