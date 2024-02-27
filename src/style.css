@@ -23,7 +23,7 @@ html.lenis {
 }
 
 .card {
-  @apply h-80 shadow-xl overflow-hidden;
+  @apply h-96 shadow-xl overflow-hidden;
 }
 
 main {
@@ -62,6 +62,18 @@ main::after {
   z-index: -1;
 }
 
+.section__players {
+  transition: opacity ease-out 1s;
+}
+
+/* #main-logo {
+  animation: fadeout 1s linear infinite;
+  animation-play-state: paused;
+  animation-delay: calc(var(--scroll) * 0.9s);
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+} */
+
 section {
   z-index: 2;
 }
@@ -89,5 +101,10 @@ section {
 @keyframes goUp {
   to {
     transform: translateY(-100vh);
+  }
+}
+@keyframes fadeout {
+  to {
+    opacity: 0;
   }
 }

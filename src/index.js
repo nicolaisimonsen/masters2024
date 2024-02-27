@@ -16,6 +16,10 @@ lenis.on("scroll", () => {
     "--scroll",
     window.scrollY / (document.body.offsetHeight - window.innerHeight)
   );
+  document.getElementById("main-logo").style.opacity =
+    1 - document.body.style.getPropertyValue("--scroll") * 10;
+  document.querySelector(".section__players").style.opacity =
+    0 + document.body.style.getPropertyValue("--scroll") * 10;
 });
 
 gsap.ticker.add((time) => {
@@ -24,7 +28,7 @@ gsap.ticker.add((time) => {
 
 gsap.ticker.lagSmoothing(0);
 
-const targets = document.querySelectorAll(".section img");
+const targets = document.querySelectorAll(".section__players img");
 
 const lazyLoad = (target) => {
   const io = new IntersectionObserver((entries, observer) => {
