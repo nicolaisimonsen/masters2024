@@ -6,6 +6,23 @@
     <title>Document</title>
   </head>
   <body>
+    <aside class="video h-screen w-screen z-2 fixed top-0 left-0">
+      <h2 class="absolute top-[50%] left-0 w-full text-center text-white">
+        44 days remaining
+      </h2>
+      <video
+        playsinline
+        autoplay
+        muted
+        loop
+        poster="polina.jpg"
+        id="bgvid"
+        class="fixed top-0 left-0 w-full h-full object-cover"
+      >
+        <!-- <source src="polina.webm" type="video/webm" /> -->
+        <source src="masters.mp4" type="video/mp4" />
+      </video>
+    </aside>
     <main class="before:sepia">
       <section class="section-one h-screen text-white text-4xl flex relative">
         <div id="main-logo" class="m-auto">
