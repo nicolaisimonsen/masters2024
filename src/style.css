@@ -23,7 +23,18 @@ html.lenis {
 }
 
 .card {
-  @apply h-96 shadow-xl overflow-hidden;
+  @apply h-96 shadow-xl overflow-hidden opacity-0;
+}
+
+.card.fade-in {
+}
+
+.player__image {
+  @apply absolute w-full h-full top-0 left-0;
+}
+
+span {
+  display: inline-block;
 }
 
 main {
@@ -72,6 +83,18 @@ aside.video::after {
 }
 aside.video h2 {
   z-index: 4 !important;
+  font-family: "Helvetica", "PT Sans", "Arial", sans-serif;
+}
+
+aside.video {
+}
+
+.cursor-dot {
+  width: 8px;
+  height: 8px;
+  background: #ffffff;
+  border-radius: 50%;
+  z-index: 999 !important;
 }
 
 .section__players {
@@ -118,5 +141,42 @@ section {
 @keyframes fadeout {
   to {
     opacity: 0;
+  }
+}
+
+.letter-overflow,
+.word-overflow {
+  display: inline-block;
+  overflow: hidden;
+}
+.letter-overflow__text,
+.word-overflow__text {
+  display: inline-block;
+  /* transform: translateY(125%);
+  opacity: 0; */
+}
+
+.word-overflow__text {
+  margin-right: 15px;
+}
+
+.animate-fadeUp > .letter-overflow__text,
+.word-overflow__text {
+  animation-name: fadeInUp;
+  animation-duration: 2000ms;
+  animation-delay: calc(1000ms + (var(--index) * 50ms));
+  animation-fill-mode: both;
+  animation-timing-function: "cubic-bezier(0.61, 1, 0.88, 1)";
+}
+
+@keyframes fadeInUp {
+  0% {
+    transform: translateY(125%);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateY(0);
+    opacity: 1;
   }
 }
