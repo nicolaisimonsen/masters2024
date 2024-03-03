@@ -23,7 +23,7 @@ html.lenis {
 }
 
 .card {
-  @apply h-96 shadow-xl overflow-hidden opacity-0;
+  @apply h-56 lg:h-96 shadow-xl overflow-hidden opacity-0 col-span-1 lg:col-span-3;
 }
 
 .card.fade-in {
@@ -116,19 +116,21 @@ section {
 .section-one__bg {
 }
 
-.players__player {
-  animation: goUp 1s ease-out infinite;
-  animation-play-state: paused;
-  animation-delay: calc((var(--scroll) * var(--index)) * -0.25s);
 
-  animation-iteration-count: 1;
-  animation-fill-mode: both;
+@media screen and (min-width: 1024px) {
+  .players__player {
+    animation: goUp 1s ease-out infinite;
+    animation-play-state: paused;
+    animation-delay: calc((var(--scroll) * var(--index)) * -0.4s);
+    animation-iteration-count: 1;
+    animation-fill-mode: both; 
+  }  
 }
 
 .player__image {
   animation: goUp 1s linear infinite;
   animation-play-state: paused;
-  animation-delay: calc((var(--scroll) - 0.1) * -0.09s);
+  animation-delay: calc((var(--scroll) * 3 ) * -0.01s);
   animation-iteration-count: 1;
   animation-fill-mode: both;
 }

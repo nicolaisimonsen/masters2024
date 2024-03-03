@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-  </head>
-  <body>
-    <!-- <aside class="video h-screen w-screen z-2 fixed top-0 left-0">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+</head>
+
+<body>
+  <!-- <aside class="video h-screen w-screen z-2 fixed top-0 left-0">
       <video
         playsinline
         autoplay
@@ -20,209 +22,31 @@
         <source src="masters.mp4" type="video/mp4" />
       </video>
     </aside> -->
-    <!-- <aside id="loadScreen" class="h-screen w-screen z-2 fixed top-0 left-0">
+  <!-- <aside id="loadScreen" class="h-screen w-screen z-2 fixed top-0 left-0">
       <h2
         class="absolute top-[50%] left-0 w-full text-center text-white text-4xl uppercase font-semibold inline-block"
       ></h2>
     </aside> -->
 
-    <div class="cursor-dot z-999"></div>
+  <div class="cursor-dot z-999"></div>
 
-    <main class="before:sepia">
-      <section class="section-one h-screen text-white text-4xl flex relative">
-        <div id="main-logo" class="m-auto">
-          <img src="./images/masters_logo.png" alt="" />
-        </div>
-        <div class="section-one__bg absolute top-0 left-0 w-full h-full"></div>
-      </section>
-      <section class="section__players mt-20 h-full text-white text-4xl flex">
-        <div class="mx-auto w-11/12 players grid grid-cols-12 gap-4">
-          <div class="players__player card col-span-3">
-            <figure class="h-full relative">
-              <img
-                class="player__image w-full object-cover absolute top-0 left-0 origin-top-left scale-125"
-                data-lazy="./images/woods.png"
-                alt="Tiger Woods"
-                srcset=""
-              />
-            </figure>
-          </div>
-          <div class="players__player card col-span-3">
-            <figure class="h-full w-full relative">
-              <img
-                class="player__image w-full object-cover absolute top-0 left-0 origin-top-left scale-125"
-                data-lazy="./images/1.png"
-                alt="Phil Mickelson"
-                srcset=""
-              />
-            </figure>
-          </div>
-          <div class="players__player card col-span-3">
-            <figure class="h-full w-full relative">
-              <img
-                class="player__image w-full object-cover absolute top-0 left-0 origin-top-left scale-125"
-                data-lazy="./images/11.png"
-                alt="Jordan Spieth"
-                srcset=""
-              />
-            </figure>
-          </div>
-          <div class="players__player card col-span-3">
-            <figure class="h-full w-full relative">
-              <img
-                class="player__image w-full object-cover absolute top-0 left-0 origin-top-left scale-125"
-                data-lazy="./images/5.png"
-                alt="Justin Thomas"
-                srcset=""
-              />
-            </figure>
-          </div>
-          <div class="players__player card col-span-3">
-            <figure class="h-full relative">
-              <img
-                class="player__image w-full object-cover absolute top-0 left-0 origin-top-left scale-125"
-                data-lazy="./images/3.png"
-                alt="Tiger Woods"
-                srcset=""
-              />
-            </figure>
-          </div>
-          <div class="players__player card col-span-3">
-            <figure class="h-full w-full relative">
-              <img
-                class="player__image w-full object-cover absolute top-0 left-0 origin-top-left scale-125"
-                data-lazy="./images/8.png"
-                alt="Phil Mickelson"
-                srcset=""
-              />
-            </figure>
-          </div>
-          <div class="players__player card col-span-3">
-            <figure class="h-full w-full relative">
-              <img
-                class="player__image w-full object-cover absolute top-0 left-0 origin-top-left scale-125"
-                data-lazy="./images/7.png"
-                alt="Jordan Spieth"
-                srcset=""
-              />
-            </figure>
-          </div>
-          <div class="players__player card col-span-3">
-            <figure class="h-full w-full relative">
-              <img
-                class="player__image w-full object-cover absolute top-0 left-0 origin-top-left scale-125"
-                data-lazy="./images/2.png"
-                alt="Justin Thomas"
-                srcset=""
-              />
-            </figure>
-          </div>
-          <div class="players__player card col-span-3">
-            <figure class="h-full w-full relative">
-              <img
-                class="player__image w-full object-cover absolute top-0 left-0 origin-top-left scale-125"
-                data-lazy="./images/10.png"
-                alt="Jordan Spieth"
-                srcset=""
-              />
-            </figure>
-          </div>
-          <div class="players__player card col-span-3">
-            <figure class="h-full w-full relative">
-              <img
-                class="player__image w-full object-cover absolute top-0 left-0 origin-top-left scale-125"
-                data-lazy="./images/4.png"
-                alt="Justin Thomas"
-                srcset=""
-              />
-            </figure>
-          </div>
-          <div class="players__player card col-span-3">
-            <figure class="h-full relative">
-              <img
-                class="player__image w-full object-cover absolute top-0 left-0 origin-top-left scale-125"
-                data-lazy="./images/6.png"
-                alt="Tiger Woods"
-                srcset=""
-              />
-            </figure>
-          </div>
-          <div class="players__player card col-span-3">
-            <figure class="h-full w-full relative">
-              <img
-                class="player__image w-full object-cover absolute top-0 left-0 origin-top-left scale-125"
-                data-lazy="./images/12.png"
-                alt="Phil Mickelson"
-                srcset=""
-              />
-            </figure>
-          </div>
-          <div class="players__player card col-span-3">
-            <figure class="h-full w-full relative">
-              <img
-                class="player__image w-full object-cover absolute top-0 left-0 origin-top-left scale-125"
-                data-lazy="./images/spieth.png"
-                alt="Jordan Spieth"
-                srcset=""
-              />
-            </figure>
-          </div>
-          <div class="players__player card col-span-3">
-            <figure class="h-full w-full relative">
-              <img
-                class="player__image w-full object-cover absolute top-0 left-0 origin-top-left scale-125"
-                data-lazy="./images/e.png"
-                alt="Justin Thomas"
-                srcset=""
-              />
-            </figure>
-          </div>
-          <div class="players__player card col-span-3">
-            <figure class="h-full w-full relative">
-              <img
-                class="player__image w-full object-cover absolute top-0 left-0 origin-top-left scale-125"
-                data-lazy="./images/b.png"
-                alt="Justin Thomas"
-                srcset=""
-              />
-            </figure>
-          </div>
-          <div class="players__player card col-span-3">
-            <figure class="h-full w-full relative">
-              <img
-                class="player__image w-full object-cover absolute top-0 left-0 origin-top-left scale-125"
-                data-lazy="./images/d.png"
-                alt="Justin Thomas"
-                srcset=""
-              />
-            </figure>
-          </div>
-          <div class="players__player card col-span-3">
-            <figure class="h-full w-full relative">
-              <img
-                class="player__image w-full object-cover absolute top-0 left-0 origin-top-left scale-125"
-                data-lazy="./images/c.png"
-                alt="Justin Thomas"
-                srcset=""
-              />
-            </figure>
-          </div>
-          <div class="players__player card col-span-3">
-            <figure class="h-full w-full relative">
-              <img
-                class="player__image w-full object-cover absolute top-0 left-0 origin-top-left scale-125"
-                data-lazy="./images/a.png"
-                alt="Justin Thomas"
-                srcset=""
-              />
-            </figure>
-          </div>
-        </div>
-      </section>
-      <section class="section h-screen bg-green-600 text-white text-4xl flex">
-        <div class="m-auto">Section 3</div>
-      </section>
-    </main>
-    <script src="bundle.js"></script>
-  </body>
+  <main class="before:sepia">
+    <section class="section-one h-screen text-white text-4xl flex relative">
+      <div id="main-logo" class="m-auto">
+        <img src="./images/masters_logo.png" alt="" />
+      </div>
+      <div class="section-one__bg absolute top-0 left-0 w-full h-full"></div>
+    </section>
+    <section class="section__players mt-20 h-full text-white text-4xl flex">
+      <div id="imageGrid" class="mx-auto players w-11/12 grid grid-cols-2 lg:grid-cols-12 gap-4">
+
+      </div>
+    </section>
+    <section class="section h-screen bg-green-600 text-white text-4xl flex">
+      <div class="m-auto">Section 3</div>
+    </section>
+  </main>
+  <script src="bundle.js"></script>
+</body>
+
 </html>

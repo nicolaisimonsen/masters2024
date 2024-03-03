@@ -3,11 +3,34 @@ import Lenis from "@studio-freight/lenis";
 import { gsap } from "gsap/dist/gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import SplitText from "./modules/split-text";
+import ImageItem, { imageArr } from "./modules/images";
 const splitText = new SplitText();
 
 gsap.registerPlugin(ScrollTrigger);
 
 const lenis = new Lenis();
+
+const newImage = (index) => {
+  const newImageElement = document.createElement("div");
+  newImageElement.id = `image-${index}`;
+  newImageElement.classList.add("players__player", "card");
+  document.getElementById("imageGrid").appendChild(newImageElement);
+};
+
+let gridImages = imageArr
+  .map((value) => ({ value, sort: Math.random() }))
+  .sort((a, b) => a.sort - b.sort)
+  .map(({ value }) => value);
+
+gridImages.map((image, index) => {
+  console.log(image);
+  newImage(index);
+  new ImageItem(document.getElementById(`image-${index}`));
+  document
+    .getElementById(`image-${index}`)
+    .querySelector("img")
+    .setAttribute("data-lazy", `./images/grid/${image}`);
+});
 
 document.querySelectorAll(".players__player").forEach((node, index) => {
   node.style.setProperty("--index", index % 4);
@@ -21,7 +44,7 @@ lenis.on("scroll", () => {
   document.getElementById("main-logo").style.opacity =
     1 - document.body.style.getPropertyValue("--scroll") * 10;
   document.querySelector(".section__players").style.opacity =
-    0 + document.body.style.getPropertyValue("--scroll") * 10;
+    0 + document.body.style.getPropertyValue("--scroll") * 30;
 });
 
 gsap.ticker.add((time) => {
@@ -55,6 +78,7 @@ const lazyLoad = (target) => {
         console.log("image loaded");
         const img = entry.target;
         const src = img.getAttribute("data-lazy");
+        console.log(src);
 
         img.setAttribute("src", src);
         img.parentNode.parentNode.animate([{ opacity: 1 }], {
@@ -72,9 +96,7 @@ const lazyLoad = (target) => {
 
 targets.forEach(lazyLoad);
 
-const loadScreenHeading = document
-  .getElementById("loadScreen")
-  .querySelector("h2");
+const loadScreenHeading = document.getElementById("loadScreen");
 
 document.addEventListener("DOMContentLoaded", () => {
   // JS Set Animation Parameters
@@ -89,11 +111,13 @@ document.addEventListener("DOMContentLoaded", () => {
   //   },
   // });
 
-  // CSS set animation class
-  splitText.wordsOverflow(
-    "44 days remaining",
-    loadScreenHeading,
-    "fadeUp",
-    null
-  );
+  if (loadScreenHeading) {
+    // CSS set animation class
+    splitText.wordsOverflow(
+      "44 days remaining",
+      loadScreenHeading.querySelector("h2"),
+      "fadeUp",
+      null
+    );
+  }
 });
